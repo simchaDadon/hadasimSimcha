@@ -1,0 +1,20 @@
+<label class="btn btn-default p-0">
+    <input type="file" (change)="selectFile($event)" />
+</label>
+
+
+<div *ngIf="selectedFiles" class="container">
+    <div class="row row-cols-2">
+        <button class="text-danger rounded" (click)="getAnswer('getNumbersLines')">מספר שורות</button>
+        <button class="text-danger rounded" (click)="getAnswer('getNumbersWords')">מספר מילים</button>
+        <button class="text-danger rounded" (click)="getAnswer('getSignalWords')">כמות המילים הייחודיות</button>
+        <button class="text-danger rounded" (click)="getAnswer('getLengthAvgSentence')">מהו אורך המשפט הממוצע </button>
+        <button class="text-danger rounded" (click)="getAnswer('getLengthMaxSentence')">אורך המשפט המקסימלי</button>
+        <button class="text-danger rounded" (click)="getAnswer('getPopularWord')">המילה הפופולארית ביותר</button>
+        <button class="text-danger rounded" (click)="getAnswer('getLongSequenceWithoutK')"> k הרצף הארוך ללא </button>
+        <button class="text-danger rounded" (click)="getAnswer('getMaxNumber')">המספר הגדול</button>
+        <button class="text-danger rounded" (click)="getAnswer('getCountColors')">כמות הצבעים</button>
+    </div>
+</div>
+
+<div *ngIf="answer" class="alert alert-secondary" role="alert">{{ answer }}</div>
